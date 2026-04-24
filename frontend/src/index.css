@@ -45,48 +45,33 @@ body,
 
 @layer base {
   :root {
-    --background: 30 20% 98%; /* Soft Cream */
-    --foreground: 230 20% 15%;
-    --card: 0 0% 100%;
-    --card-foreground: 230 20% 15%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 230 20% 15%;
-    --primary: 235 60% 52%; /* Indigo */
-    --primary-foreground: 235 60% 98%;
-    --secondary: 30 10% 94%;
-    --secondary-foreground: 230 20% 15%;
-    --muted: 30 10% 94%;
-    --muted-foreground: 230 10% 45%;
-    --accent: 30 10% 92%;
-    --accent-foreground: 230 20% 15%;
+    --background: 0 0% 0%; /* Pure Black */
+    --foreground: 0 0% 98%;
+    --card: 0 0% 8%; /* Netflix Dark Grey */
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 5 95% 55%; /* Reddish Orange */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 0 0% 20%;
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 30 10% 88%;
-    --input: 30 10% 88%;
-    --ring: 235 60% 52%;
-    --radius: 0.75rem;
+    --border: 0 0% 25%;
+    --input: 0 0% 22%;
+    --ring: 5 95% 55%;
+    --radius: 0.5rem;
   }
 
   .dark {
-    --background: 240 10% 4%;
+    /* Same as root for dark-only experience */
+    --background: 0 0% 0%;
     --foreground: 0 0% 98%;
-    --card: 240 10% 6%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 4%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 235 70% 65%;
-    --primary-foreground: 235 70% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 235 70% 65%;
+    --primary: 5 95% 55%;
   }
 }
 
@@ -96,7 +81,12 @@ body,
   }
   body {
     @apply bg-background text-foreground;
+    line-height: 1.25;
   }
+}
+
+* {
+  font-style: normal !important;
 }
 
 .auth-gradient {

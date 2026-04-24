@@ -98,17 +98,17 @@ const ErrorDetail: React.FC = () => {
         </header>
 
         {/* Content Area */}
-        <div className="flex-1 overflow-y-auto px-8 lg:px-24 py-16">
-          <div className="max-w-4xl mx-auto space-y-16">
+        <div className="flex-1 overflow-y-auto px-12 py-12">
+          <div className="max-w-full lg:max-w-7xl space-y-12 animate-in fade-in slide-in-from-left-4 duration-500">
             
             {/* Original Traceback */}
             <div className="space-y-4">
-              <div className="flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] text-muted-foreground uppercase ml-1 opacity-60">
+              <div className="flex items-center gap-2 text-[11px] font-bold tracking-tight text-primary ml-1">
                 <Terminal size={14} />
                 Input Traceback
               </div>
-              <Card className="border-border/40 bg-zinc-100/50 dark:bg-zinc-900/50 overflow-hidden shadow-none backdrop-blur-sm">
-                <div className="p-8 text-base text-destructive dark:text-red-400 font-mono whitespace-pre-wrap leading-relaxed">
+              <Card className="border-border bg-zinc-900/50 overflow-hidden shadow-2xl backdrop-blur-xl">
+                <div className="p-8 text-base text-red-500 font-mono whitespace-pre-wrap leading-tight opacity-90">
                   {error.error_message}
                 </div>
               </Card>
@@ -116,45 +116,45 @@ const ErrorDetail: React.FC = () => {
 
             {/* AI Diagnosis */}
             <div className="space-y-8 pb-20">
-              <div className="flex items-center gap-3 text-[10px] font-bold tracking-[0.2em] text-primary uppercase ml-1">
+              <div className="flex items-center gap-3 text-[11px] font-bold tracking-tight text-primary ml-1">
                 <Sparkles size={16} />
-                AI Diagnosis & Fix
+                AI Diagnosis & Resolution
               </div>
               
-              <div className="space-y-8">
+              <div className="space-y-6">
                 {error.ai_explanation.split('\n').filter(line => line.trim()).map((line, i) => {
                   if (line.startsWith('### ') || line.startsWith('**')) {
                     const text = line.replace(/### |\*\*/g, '');
                     return (
-                      <h3 key={i} className="text-2xl font-black tracking-tight text-foreground pt-6 flex items-center gap-4">
-                        <div className="w-1.5 h-6 bg-primary rounded-full" />
+                      <h3 key={i} className="text-xl font-black tracking-tight text-foreground pt-4 flex items-center gap-4">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full shadow-[0_0_10px_#f43f5e]" />
                         {text}
                       </h3>
                     );
                   }
                   if (line.includes('`')) {
                     return (
-                      <div key={i} className="my-6">
-                         <div className="bg-zinc-950 text-zinc-100 p-6 rounded-2xl border border-white/10 overflow-x-auto font-mono text-sm leading-loose shadow-xl">
+                      <div key={i} className="my-4">
+                         <div className="bg-black text-zinc-100 p-8 rounded-xl border border-border overflow-x-auto font-mono text-sm leading-tight shadow-3xl hover:border-primary/30 transition-colors">
                            {line.split('`').map((part, index) => (
-                             index % 2 === 1 ? <code key={index} className="text-primary-foreground bg-primary/20 px-1.5 py-0.5 rounded font-bold">{part}</code> : part
+                             index % 2 === 1 ? <code key={index} className="text-primary font-black bg-primary/5 px-1 py-0.5 rounded">{part}</code> : part
                            ))}
                          </div>
                       </div>
                     );
                   }
-                  return <p key={i} className="text-muted-foreground text-lg leading-relaxed font-medium pl-6 border-l-2 border-border/20">{line}</p>;
+                  return <p key={i} className="text-muted-foreground text-base leading-snug font-medium pl-6 border-l-2 border-primary/20">{line}</p>;
                 })}
               </div>
             </div>
 
-            <div className="pt-16 border-t border-border/50 flex justify-center">
+            <div className="pt-12 border-t border-border flex justify-start">
               <Button 
                 variant="ghost" 
                 onClick={() => navigate('/')} 
-                className="text-muted-foreground hover:text-primary hover:bg-primary/5 transition-all gap-3 group px-8 py-6 rounded-2xl text-base font-bold"
+                className="text-muted-foreground hover:text-primary hover:bg-primary/5 transition-all gap-3 group px-8 py-6 rounded-xl text-sm font-black"
               >
-                Found a new bug? Analyze it now <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                Launch New Diagnostic <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
           </div>
