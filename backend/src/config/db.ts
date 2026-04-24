@@ -24,6 +24,16 @@ export const initDb = async () => {
         password VARCHAR(255) NOT NULL
       )
     `);
+
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS error_logs (
+        id SERIAL PRIMARY KEY,
+        user_id INTEGER REFERENCES users(id),
+        error_message TEXT NOT NULL,
+        ai_explanation TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      )
+    `);
     console.log("Database initialized successfully");
   } catch (err) {
     console.error("Error initializing database:", err);
