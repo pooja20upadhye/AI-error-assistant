@@ -25,13 +25,15 @@ export const Sidebar: React.FC<SidebarProps> = ({ errors, loading }) => {
   return (
     <div className="w-72 h-screen flex flex-col bg-zinc-50 dark:bg-zinc-950 border-r border-border shrink-0 transition-all duration-300">
       {/* Header */}
-      <div className="p-4 border-b border-border flex items-center justify-between">
-        <div className="flex items-center gap-2 font-bold tracking-tight text-primary">
-          <Sparkles size={20} />
+      <div className="h-20 px-6 border-b border-border/40 flex items-center justify-between">
+        <div className="flex items-center gap-3 font-black tracking-tight text-primary text-xl">
+          <div className="bg-primary/10 p-2 rounded-xl">
+            <Sparkles size={22} />
+          </div>
           <span>Assistant</span>
         </div>
-        <Button variant="ghost" size="sm" onClick={() => navigate('/')} className="h-8 w-8 p-0">
-          <Plus size={18} />
+        <Button variant="ghost" size="sm" onClick={() => navigate('/')} className="h-10 w-10 p-0 rounded-xl hover:bg-primary/5">
+          <Plus size={20} />
         </Button>
       </div>
 
