@@ -70,7 +70,7 @@ const Dashboard: React.FC = () => {
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground group-focus-within:text-primary transition-colors" size={18} />
               <Input 
                 placeholder="Search your diagnostics history..." 
-                className="pl-12 bg-muted/20 border-border rounded-2xl h-11 text-sm focus-visible:bg-background focus-visible:ring-primary/20 shadow-sm transition-all"
+                className="pl-12 bg-white border-border rounded-2xl h-11 text-sm focus-visible:bg-white focus-visible:ring-primary/20 shadow-sm transition-all"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
@@ -82,7 +82,7 @@ const Dashboard: React.FC = () => {
           <div className="max-w-[1400px] mx-auto space-y-16">
             {/* Hero Section */}
             <div className="flex flex-col items-center text-center space-y-6">
-              <div className="bg-primary/20 w-16 h-16 rounded-[2rem] flex items-center justify-center border-2 border-primary/40 shadow-[0_0_30px_rgba(244,63,94,0.15)]">
+              <div className="bg-primary/20 w-16 h-16 rounded-[2rem] flex items-center justify-center border-2 border-primary/40 shadow-[0_0_30px_rgba(99,102,241,0.15)]">
                 <Sparkles size={32} className="text-primary" />
               </div>
               <div className="space-y-3">
@@ -96,8 +96,8 @@ const Dashboard: React.FC = () => {
             </div>
 
             {/* Input Card */}
-            <Card className="border-border bg-card/60 backdrop-blur-2xl shadow-[0_0_50px_rgba(0,0,0,0.5)] overflow-hidden group transition-all">
-              <div className="p-3 flex items-center justify-between bg-zinc-900 border-b border-border px-6">
+            <Card className="border-primary/20 bg-card/60 backdrop-blur-2xl shadow-[0_0_50px_rgba(99,102,241,0.1)] overflow-hidden group transition-all">
+              <div className="p-3 flex items-center justify-between bg-secondary border-b border-border px-6">
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 rounded-full bg-zinc-700" />
                   <div className="w-2.5 h-2.5 rounded-full bg-zinc-700" />
@@ -108,20 +108,20 @@ const Dashboard: React.FC = () => {
               <CardContent className="p-0">
                 <form onSubmit={handlePostError} className="relative">
                   <textarea 
-                    className="w-full min-h-[350px] border-none bg-black/40 p-10 text-lg font-mono leading-tight focus:outline-none focus:ring-0 placeholder:text-muted-foreground/20 scrollbar-hide resize-none shadow-[inset_0_0_50px_rgba(0,0,0,0.5)]"
+                    className="w-full min-h-[350px] border-none bg-white p-10 text-lg font-mono leading-tight focus:outline-none focus:ring-0 placeholder:text-muted-foreground/40 scrollbar-hide resize-none shadow-inner text-foreground/90"
                     placeholder="TypeError: Cannot read property 'map' of undefined..."
                     value={newError}
                     onChange={(e) => setNewError(e.target.value)}
                     required
                   />
-                  <div className="p-6 bg-zinc-950/80 border-t border-border flex items-center justify-between backdrop-blur-md">
+                  <div className="p-6 bg-secondary border-t border-border flex items-center justify-between backdrop-blur-md">
                     <div className="text-xs text-muted-foreground/50 font-bold flex items-center gap-2">
                       <Terminal size={14} />
                       Input Traceback Context
                     </div>
                     <Button 
                       disabled={posting || !newError.trim()} 
-                      className="rounded-xl px-12 py-7 text-base font-black shadow-[0_0_40px_rgba(244,63,94,0.3)] hover:shadow-[0_0_60px_rgba(244,63,94,0.5)] transition-all active:scale-95 disabled:opacity-60 bg-primary text-primary-foreground flex items-center gap-3"
+                      className="rounded-xl px-12 py-7 text-base font-black shadow-[0_0_40px_rgba(99,102,241,0.3)] hover:shadow-[0_0_60px_rgba(99,102,241,0.5)] transition-all active:scale-95 disabled:opacity-60 bg-primary text-primary-foreground flex items-center gap-3"
                     >
                       {posting ? 'Processing...' : <>Analyze Error <ArrowRight size={20} /></>}
                     </Button>
@@ -139,7 +139,7 @@ const Dashboard: React.FC = () => {
               ].map((tip) => (
                 <div 
                   key={tip.label} 
-                  className="p-8 rounded-2xl border border-border bg-zinc-900/50 hover:bg-zinc-800/80 transition-all cursor-pointer group relative overflow-hidden"
+                  className="p-8 rounded-2xl border border-border bg-white hover:bg-secondary/50 transition-all cursor-pointer group relative overflow-hidden hover:border-primary/50 shadow-sm"
                 >
                   <div className="relative z-10 flex flex-col gap-2">
                     <span className="text-[10px] uppercase tracking-widest font-black text-primary">Quick Start</span>

@@ -21,7 +21,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ errors, loading }) => {
   const location = useLocation();
 
   return (
-    <div className="w-72 h-screen flex flex-col bg-zinc-950 border-r border-border shrink-0 transition-all duration-300">
+    <div className="w-72 h-screen flex flex-col bg-card border-r border-border shrink-0 transition-all duration-300 shadow-sm">
       {/* Header */}
       <div className="h-20 px-6 border-b border-border flex items-center justify-between">
         <div className="flex items-center gap-3 font-black tracking-tight text-primary text-xl">
@@ -60,10 +60,10 @@ export const Sidebar: React.FC<SidebarProps> = ({ errors, loading }) => {
       </div>
 
       {/* Footer */}
-      <div className="p-6 border-t border-border space-y-4 bg-zinc-900/20">
+      <div className="p-6 border-t border-border space-y-4 bg-secondary/50">
         <div className="flex items-center justify-between px-2">
           <div className="flex flex-col">
-            <span className="text-[10px] tracking-[0.1em] font-bold text-muted-foreground/60">Active Session</span>
+            <span className="text-[10px] tracking-[0.1em] font-bold text-muted-foreground">Active Session</span>
             <span className="text-sm font-bold text-foreground">{user?.name}</span>
           </div>
           <Button variant="ghost" size="icon" onClick={logout} className="h-10 w-10 text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-xl transition-all">
