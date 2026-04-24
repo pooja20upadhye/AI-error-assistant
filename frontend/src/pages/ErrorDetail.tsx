@@ -107,8 +107,8 @@ const ErrorDetail: React.FC = () => {
                 <Terminal size={14} />
                 Input Traceback
               </div>
-              <Card className="border-border bg-zinc-900/50 overflow-hidden shadow-2xl backdrop-blur-xl">
-                <div className="p-8 text-base text-red-500 font-mono whitespace-pre-wrap leading-tight opacity-90">
+              <Card className="border-border bg-white overflow-hidden shadow-xl">
+                <div className="p-8 text-base text-primary font-mono whitespace-pre-wrap leading-tight opacity-90">
                   {error.error_message}
                 </div>
               </Card>
@@ -127,7 +127,7 @@ const ErrorDetail: React.FC = () => {
                     const text = line.replace(/### |\*\*/g, '');
                     return (
                       <h3 key={i} className="text-xl font-black tracking-tight text-foreground pt-4 flex items-center gap-4">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full shadow-[0_0_10px_#f43f5e]" />
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full shadow-[0_0_10px_#6366f1]" />
                         {text}
                       </h3>
                     );
@@ -135,7 +135,7 @@ const ErrorDetail: React.FC = () => {
                   if (line.includes('`')) {
                     return (
                       <div key={i} className="my-4">
-                         <div className="bg-black text-zinc-100 p-8 rounded-xl border border-border overflow-x-auto font-mono text-sm leading-tight shadow-3xl hover:border-primary/30 transition-colors">
+                         <div className="bg-secondary/50 text-foreground p-8 rounded-xl border border-border overflow-x-auto font-mono text-sm leading-tight shadow-sm hover:border-primary/30 transition-colors">
                            {line.split('`').map((part, index) => (
                              index % 2 === 1 ? <code key={index} className="text-primary font-black bg-primary/5 px-1 py-0.5 rounded">{part}</code> : part
                            ))}
@@ -143,7 +143,7 @@ const ErrorDetail: React.FC = () => {
                       </div>
                     );
                   }
-                  return <p key={i} className="text-muted-foreground text-base leading-snug font-medium pl-6 border-l-2 border-primary/20">{line}</p>;
+                  return <p key={i} className="text-foreground/80 text-base leading-snug font-medium pl-6 border-l-2 border-primary/20">{line}</p>;
                 })}
               </div>
             </div>

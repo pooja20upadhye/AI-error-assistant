@@ -45,34 +45,28 @@ body,
 
 @layer base {
   :root {
-    --background: 0 0% 0%; /* Pure Black */
-    --foreground: 0 0% 98%;
-    --card: 0 0% 8%; /* Netflix Dark Grey */
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 5%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 5 95% 55%; /* Reddish Orange */
+    --background: 40 33% 98%; /* Creamish White */
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 239 84% 60%; /* Indigo 600 */
     --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
-    --accent: 0 0% 20%;
-    --accent-foreground: 0 0% 98%;
+    --secondary: 40 33% 95%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 40 10% 92%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 239 84% 96%;
+    --accent-foreground: 239 84% 45%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 25%;
-    --input: 0 0% 22%;
-    --ring: 5 95% 55%;
-    --radius: 0.5rem;
+    --destructive-foreground: 210 40% 98%;
+    --border: 239 20% 88%;
+    --input: 239 20% 88%;
+    --ring: 239 84% 60%;
+    --radius: 0.75rem;
   }
 
-  .dark {
-    /* Same as root for dark-only experience */
-    --background: 0 0% 0%;
-    --foreground: 0 0% 98%;
-    --primary: 5 95% 55%;
-  }
 }
 
 @layer base {

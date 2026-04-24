@@ -36,11 +36,11 @@ const Register: React.FC = () => {
       
       <Card className="w-full max-w-lg z-10 border-border bg-card/60 backdrop-blur-2xl shadow-2xl">
         <CardHeader className="text-center space-y-2">
-          <div className="mx-auto w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-2 border border-primary/20 shadow-[0_0_15px_rgba(16,185,129,0.1)]">
+          <div className="mx-auto w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-2 border border-primary/20 shadow-sm">
             <Sparkles className="text-primary" size={24} />
           </div>
-          <CardTitle className="text-2xl font-bold tracking-tight text-white">Join the Future</CardTitle>
-          <CardDescription className="text-zinc-400">Instant AI diagnostics for your codebase.</CardDescription>
+          <CardTitle className="text-2xl font-bold tracking-tight text-foreground">Join the Future</CardTitle>
+          <CardDescription className="text-muted-foreground">Instant AI diagnostics for your codebase.</CardDescription>
         </CardHeader>
         
         <CardContent>
@@ -59,7 +59,7 @@ const Register: React.FC = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
-                className="bg-white/5 border-white/10"
+                className="bg-white border-border"
               />
             </div>
             <div className="space-y-2">
@@ -70,7 +70,7 @@ const Register: React.FC = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="bg-white/5 border-white/10"
+                className="bg-white border-border"
               />
             </div>
             <div className="space-y-2">
@@ -81,7 +81,7 @@ const Register: React.FC = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="bg-white/5 border-white/10"
+                className="bg-white border-border"
               />
             </div>
             
