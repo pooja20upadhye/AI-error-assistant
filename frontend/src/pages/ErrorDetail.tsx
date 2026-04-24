@@ -133,8 +133,6 @@ const ErrorDetail: React.FC = () => {
                     );
                   }
                   if (line.includes('`')) {
-                    // Check if it's a code block-like line
-                    const isFullCode = line.startsWith('`') && line.endsWith('`');
                     return (
                       <div key={i} className="my-6">
                          <div className="bg-zinc-950 text-zinc-100 p-6 rounded-2xl border border-white/10 overflow-x-auto font-mono text-sm leading-loose shadow-xl">
