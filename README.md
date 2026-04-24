@@ -88,23 +88,5 @@ Open `http://localhost:5173` to view the app!
 
 ---
 
-## 🌐 Deployment
-
-### Backend Deployment (e.g., Render / Heroku)
-1.  Connect your GitHub repository.
-2.  Set the **Root Directory** to `backend`.
-3.  Add environment variables (from your `.env`).
-4.  Provision a **PostgreSQL** instance and a **Redis** instance (e.g., via Aiven or Upstash).
-5.  Set the start command to `npm install && npm run dev` (or a proper `build` script if you add one).
-
-### Frontend Deployment (e.g., Vercel / Netlify)
-1.  Connect your GitHub repository.
-2.  Set the **Root Directory** to `frontend`.
-3.  Set the **Build Command** to `npm run build`.
-4.  Set the **Output Directory** to `dist`.
-5.  Ensure the API endpoint in `frontend/src/api/api.ts` points to your deployed backend URL.
-
----
-
 ## 📄 License
 This project is licensed under the ISC License.
